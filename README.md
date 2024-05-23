@@ -11,12 +11,7 @@ The goal of this project is to sort data on a stack, with a limited set of instr
 ---
 
 ### Motivation
-We thought creating our own algorithm to sort data would be a fun challenge.
-After a lot of trial and error we finally came up with a solution that works.
-The final version of the algorithm is a many many iterations of the initial idea.
-We learned a lot about how to optimize code and how to use the stack data structure.
-This project helped us to improve our problem-solving skills, our ability to work in a team
-and algorithmical thinking.
+Yet to be determined.
 
 ---
 
