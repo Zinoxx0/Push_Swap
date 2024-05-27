@@ -6,13 +6,14 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 10:34:52 by sezequie          #+#    #+#             */
-/*   Updated: 2024/05/27 13:53:54 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:38:05 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <limits.h>
 # include <stdbool.h>
 # include "libft.h"
 # include <unistd.h>
