@@ -6,7 +6,44 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 13:00:27 by sezequie          #+#    #+#             */
-/*   Updated: 2024/05/27 13:00:28 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:04:18 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+static void	rev_rotate(t_stack_node **stack)
+{
+	t_stack_node	*last;
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	last = find_last(*stack);
+	last->prev->next = NULL;
+	last->next = *stack;
+	last->prev = NULL;
+	*stack = last;
+	last->next->prev = last;
+}
+
+void	rra(t_stack_node **a, bool print)
+{
+	rev_rotate(a);
+	if (!print)
+		ft_printf("rra\n");
+}
+
+void	rrb(t_stack_node **b, bool print)
+{
+	rev_rotate(b);
+	if (!print)
+		ft_printf("rrb\n");
+}
+
+void	rrr(t_stack_node **a, t_stack_node **b, bool print)
+{
+	rev_rotate(a);
+	rev_rotate(b);
+	if (!print)
+		ft_printf("rrr\n");
+}
