@@ -6,7 +6,8 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:13:03 by sezequie          #+#    #+#             */
-/*   Updated: 2024/05/27 14:13:04 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/05/28 09:35:34 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"

@@ -6,7 +6,7 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 13:00:36 by sezequie          #+#    #+#             */
-/*   Updated: 2024/05/27 13:57:13 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/05/28 09:34:50 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	swap(t_stack_node **head)
 	(*head)->prev->next = (*head)->next;
 	if ((*head)->next)
 		(*head)->next->prev = (*head)->prev;
-	(*head)->next = (*head)->prev; 
+	(*head)->next = (*head)->prev;
 	(*head)->prev = NULL;
 }
 
