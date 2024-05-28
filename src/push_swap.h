@@ -6,7 +6,7 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 10:34:52 by sezequie          #+#    #+#             */
-/*   Updated: 2024/05/27 14:38:05 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/05/28 07:53:55 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,58 @@
 
 # include <limits.h>
 # include <stdbool.h>
-# include "libft.h"
+# include "libft/src/libft.h"
+# include "libft/ft_printf/ft_printf.h"
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct s_stack_node //A container of data enclosed in {} braces. `s_` for struct
+typedef struct s_stack_node
 {
-	int					nbr; //The number to sort
-	int					index; //The number's position in the stack
-	int					push_cost; //How many commands in total
-	bool				above_median; //Used to calculate `push_cost`
-	bool				cheapest; //The node that is the cheapest to do commands
-	struct s_stack_node	*target_node; //The target node of a node in the opposite stack
-	struct s_stack_node	*next; //A pointer to the next node
-	struct s_stack_node	*prev; //A pointer to the previous node
-}	t_stack_node; //The "shortened name", "t_stack_node". `t_` for type
+	int					value;
+	int					current_position;
+	int					final_index;
+	int					push_price;
+	bool				above_median;
+	bool				cheapest;
+	struct s_stack_node	*target_node;
+	struct s_stack_node	*next;
+	struct s_stack_node	*prev;
+}				t_stack_node;	
 
-void			sa(t_stack_node **a, bool print);
-void			sb(t_stack_node **b, bool print);
-void			ss(t_stack_node **a, t_stack_node **b, bool print);
-void			ra(t_stack_node **a, bool print);
-void			rb(t_stack_node **b, bool print);
-void			rr(t_stack_node **a, t_stack_node **b, bool print);
-void			rra(t_stack_node **a, bool print);
-void			rrb(t_stack_node **b, bool print);
-void			rrr(t_stack_node **a, t_stack_node **b, bool print);
-void			pa(t_stack_node **a, t_stack_node **b, bool print);
-void			pb(t_stack_node **b, t_stack_node **a, bool print);
+//*** Handle errors-free ***
+void			free_matrix(char **argv);
+void			error_free(t_stack_node **a, char **argv, bool flag_argc_2);
+void			free_stack(t_stack_node **stack);
+int				error_repetition(t_stack_node *a, int nbr);
+int				error_syntax(char *str_nbr);
+
+//*** Stack creation ***
+void			stack_init(t_stack_node **a, char **argv, bool flag_argc_2);
+void			init_nodes(t_stack_node *a, t_stack_node *b);
+void			set_current_position(t_stack_node *stack);
+void			set_price(t_stack_node *a, t_stack_node *b);
+void			set_cheapest(t_stack_node *b);
+
+//*** linked list utils ***
+void			append_node(t_stack_node **stack, int nbr);
+t_stack_node	*find_last_node(t_stack_node *head);
+t_stack_node	*find_smallest(t_stack_node *stack);
+t_stack_node	*return_cheapest(t_stack_node *stack);
+bool			stack_sorted(t_stack_node *stack);
+int				stack_len(t_stack_node *stack);
+void			finish_rotation(t_stack_node **s, t_stack_node *n, char c);
+
+//*** Commands ***
+void			sa(t_stack_node **a, bool checker);
+void			sb(t_stack_node **b, bool checker);
+void			ss(t_stack_node **a, t_stack_node **b, bool checker);
+void			ra(t_stack_node **a, bool checker);
+void			rb(t_stack_node **b, bool checker);
+void			rr(t_stack_node **a, t_stack_node **b, bool checker);
+void			rra(t_stack_node **a, bool checker);
+void			rrb(t_stack_node **b, bool checker);
+void			rrr(t_stack_node **a, t_stack_node **b, bool checker);
+void			pa(t_stack_node **a, t_stack_node **b, bool checker);
+void			pb(t_stack_node **b, t_stack_node **a, bool checker);
 
 #endif

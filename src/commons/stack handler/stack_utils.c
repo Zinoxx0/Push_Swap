@@ -6,85 +6,101 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:42:36 by sezequie          #+#    #+#             */
-/*   Updated: 2024/05/27 14:42:55 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/05/28 07:41:19 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_len(t_stack_node *stack) //Define a function that calculates and returns the length of a stack
+t_stack_node	*find_last_node(t_stack_node *head)
 {
-	int	count; //To store the node count
+	if (NULL == head)
+		return (NULL);
+	while (head->next)
+		head = head->next;
+	return (head);
+}
 
-	if (!stack) 
+/*
+ * Search for the last node and append 
+ * 🚨 Pay attention if the stack empty?
+*/
+void	append_node(t_stack_node **stack, int nbr)
+{
+	t_stack_node	*node;
+	t_stack_node	*last_node;
+
+	if (NULL == stack)
+		return ;
+	node = malloc(sizeof(t_stack_node));
+	if (NULL == node)
+		return ;
+	node->next = NULL;
+	node->value = nbr;
+	if (NULL == *stack)
+	{
+		*stack = node;
+		node->prev = NULL;
+	}
+	else
+	{
+		last_node = find_last_node(*stack);
+		last_node->next = node;
+		node->prev = last_node;
+	}
+}
+
+/*
+ * Find the smallest value node
+*/
+t_stack_node	*find_smallest(t_stack_node *stack)
+{
+	long			smallest;
+	t_stack_node	*smallest_node;
+
+	if (NULL == stack)
+		return (NULL);
+	smallest = LONG_MAX;
+	while (stack)
+	{
+		if (stack->value < smallest)
+		{
+			smallest = stack->value;
+			smallest_node = stack;
+		}
+		stack = stack->next;
+	}
+	return (smallest_node);
+}
+
+/*
+ * Return the cheapest node 
+ * that is already flagged
+*/
+t_stack_node	*return_cheapest(t_stack_node *stack)
+{
+	if (NULL == stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}
+
+int	stack_len(t_stack_node *stack)
+{
+	int	count;
+
+	if (NULL == stack)
 		return (0);
 	count = 0;
-	while (stack) //Loop until the end of the stack is reached
+	while (stack)
 	{
-		stack = stack->next; //Move to the next node
-		count++;
+		++count;
+		stack = stack->next;
 	}
 	return (count);
-}
-
-t_stack_node	*find_last(t_stack_node *stack) //Define a function that returns the pointer to the last node
-{
-	if (!stack)
-		return (NULL);
-	while (stack->next) //Loop until the end of the stack is reached
-		stack = stack->next;
-	return (stack);
-}
-
-bool	stack_sorted(t_stack_node *stack) //Define a function that checks if the stack is sorted in ascending order
-{
-	if (!stack)
-		return (1);
-	while (stack->next) //Loop until the end of the stack is reached
-	{
-		if (stack->nbr > stack->next->nbr) //Check if the current value is larger than the next node's value, indicating it is out of sort
-			return (false);
-		stack = stack->next; //If not, move to the next node for processing
-	}
-	return (true);
-}
-
-t_stack_node	*find_min(t_stack_node *stack) //Define a function that searches a stack and returns the node with the smallest number
-{
-	long			min; //To store the smallest value so far
-	t_stack_node	*min_node; //To store a pointer that points to the smallest number
-
-	if (!stack)
-		return (NULL);
-	min = LONG_MAX; //Assign to the smallest value so far, the max long integer
-	while (stack) //Loop until the end of the stack is reached
-	{
-		if (stack->nbr < min) //Check if the current node value is smaller than the smallest so far
-		{
-			min = stack->nbr; //If so, update the smallest number so far
-			min_node = stack; //Set the pointer to point to the node with the smallest number so far
-		}
-		stack = stack->next; //Move to the next node for processing
-	}
-	return (min_node); 
-}
-
-t_stack_node	*find_max(t_stack_node *stack) //Define a function that searches a stack and returns the node with the biggest number
-{
-	long			max; //To store the biggest value so far
-	t_stack_node	*max_node; //To store a pointer that points to the biggest number
-
-	if (!stack)
-		return (NULL);
-	max = LONG_MIN; //Assign to the biggest value so far, the max long integer
-	while (stack) //Loop until the end of the stack is reached
-	{
-		if (stack->nbr > max) //Check if the current node value is smaller than the biggest so far
-		{
-			max = stack->nbr; //If so, update the biggest number so far
-			max_node = stack; //Set the pointer to point to the node with the biggest number so far
-		}
-		stack = stack->next; //Move to the next node for processing
-	}
-	return (max_node);
 }
