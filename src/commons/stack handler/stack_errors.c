@@ -6,11 +6,11 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 07:37:06 by sezequie          #+#    #+#             */
-/*   Updated: 2024/05/28 07:52:44 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/05/28 09:10:36 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 /*
  * Ad hoc function to free the 2D array

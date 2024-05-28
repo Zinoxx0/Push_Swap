@@ -6,7 +6,7 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:42:36 by sezequie          #+#    #+#             */
-/*   Updated: 2024/05/28 07:41:19 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/05/28 09:28:41 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,20 +74,19 @@ t_stack_node	*find_smallest(t_stack_node *stack)
 }
 
 /*
- * Return the cheapest node 
- * that is already flagged
+ * Check if a given stack is sorted
 */
-t_stack_node	*return_cheapest(t_stack_node *stack)
+bool	stack_sorted(t_stack_node *stack)
 {
 	if (NULL == stack)
-		return (NULL);
-	while (stack)
+		return (1);
+	while (stack->next)
 	{
-		if (stack->cheapest)
-			return (stack);
+		if (stack->value > stack->next->value)
+			return (false);
 		stack = stack->next;
 	}
-	return (NULL);
+	return (true);
 }
 
 int	stack_len(t_stack_node *stack)
