@@ -6,7 +6,7 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 10:34:52 by sezequie          #+#    #+#             */
-/*   Updated: 2024/05/28 09:29:28 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/05/29 14:20:57 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef struct s_stack_node
 	int					push_price;
 	bool				above_median;
 	bool				cheapest;
-	struct s_stack_node	*target_node;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }				t_stack_node;
@@ -62,5 +61,8 @@ void			rrb(t_stack_node **b, bool checker);
 void			rrr(t_stack_node **a, t_stack_node **b, bool checker);
 void			pa(t_stack_node **a, t_stack_node **b, bool checker);
 void			pb(t_stack_node **b, t_stack_node **a, bool checker);
+
+//*** Sorting ***
+void			sort_stacks(t_stack_node **a, t_stack_node **b);
 
 #endif

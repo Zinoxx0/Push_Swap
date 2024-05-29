@@ -6,14 +6,13 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:36:24 by sezequie          #+#    #+#             */
-/*   Updated: 2024/05/28 09:10:19 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/05/29 14:22:30 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
- *  atol, i need it to check eventual overflows
  *  converting every string into a long value
 */
 static long	ft_atol(const char *str)
