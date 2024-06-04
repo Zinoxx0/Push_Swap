@@ -1,9 +1,0 @@
-i need to find the most efficient way to sort a stack.
-i've been thinking on using graph theory to reach the final sorted state of the stack.
-i want it to be stochastic so the graph itself can look for the sequence of steps
-most suitable to reach that orderly state however it can be completely aleatory.
-i'm planning on using 2 graphs contected to each other that feed on each other 
-feedback to proceed, via Directed Acyclic Graphs. Since i can use one graph to gauge
-the entropy of the stack and other one to search possible moves,
-by doing that i can assure that while the graph explores, it's biased to look
-for options that decreases the entropy of the stack.
