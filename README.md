@@ -2,9 +2,9 @@
 Implementing a sorting algorithm in C using stack data structure.
 
 ## Algorithm (Almighty Push Swap) WIP
-i've been thinking on using an heuristic approach to find the most efficient sequence of steps that leads the sorted state of the stack.
-How so? by letting the algorithm itsel explore nodes (stack states) for the most efficient "pathway" to the sorted state of the stack, starting from the arbitrary initial state of the unsorted stack.
-the idea is still very raw but i will probably need to use "graph theory", however i found that there are some already existing algorithms and concepts related to this: "Simulated annealing", "Game tree"
+i've been thinking on using an heuristic approach to find the most efficient sequence of steps that leads to the sorted state of the stack.
+How so? by letting the algorithm itsel explore nodes (where information relative to the state lays) for the most efficient "pathway" to the sorted state of the stack, starting from the arbitrary initial state of the unsorted stack, using a reference value that i would call "entropy index" which will evaluate the disorder of the stack.
+the idea is still very raw but i found out that "Simulated annealing", "local search" and "DAG" (directed acyclic Graphs) are directly related to this very idea.
 
 ### Description
 The goal of this project is to sort data on a stack with the help of an empty one, with a limited set of instructions, using the lowest possible number of actions. To succeed you'll have to manipulate various types of algorithms and choose the one (of many) most appropriate solution for an optimized data sorting.
