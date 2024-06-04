@@ -1,10 +1,13 @@
-# 42push_swap
+# 42 push_swap
 Implementing a sorting algorithm in C using stack data structure.
 
-## Algorithm (Almighty Push Swap)
+## Algorithm (Almighty Push Swap) WIP
+i've been thinking on using an heuristic approach to find the most efficient sequence of steps that leads the sorted state of the stack.
+How so? by letting the algorithm itsel explore nodes (stack states) for the most efficient "pathway" to the sorted state of the stack, starting from the arbitrary initial state of the unsorted stack.
+the idea is still very raw but i will probably need to use "graph theory", however i found that there are some already existing algorithms and concepts related to this: "Simulated annealing", "Game tree"
 
 ### Description
-The goal of this project is to sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. To succeed you'll have to manipulate various types of algorithms and choose the one (of many) most appropriate solution for an optimized data sorting.
+The goal of this project is to sort data on a stack with the help of an empty one, with a limited set of instructions, using the lowest possible number of actions. To succeed you'll have to manipulate various types of algorithms and choose the one (of many) most appropriate solution for an optimized data sorting.
 
  _**push_swap** - calculates and displays on the standard output the smallest number of moves using `push_swap` instruction language that sorts integer arguments received._
 
@@ -32,6 +35,17 @@ Yet to be determined.
 
 ### Preparing for the algorithm
 
+_Simulated annealing core algo:_
+1. Initialization i := istart, k := 0, ck = c0, Lk := L0);
+2. Repeat
+3. For l = 0 to Lk do
+ • Generate a solution j from the neighborhood Si of the current solution i;
+ • If f(j) < f(i) then i := j (j becomes the current solution);
+ • Else, j becomes the current solution with probability e (f(i)−f(j)/ck);
+4. k := k +1;
+5. Compute(Lk, ck);
+6. Until ck rougly 0
+
 ---
 
 ### Terminology
@@ -54,6 +68,7 @@ Yet to be determined.
 - [**Linked List**](https://en.wikipedia.org/wiki/Linked_list)
 - [**Stack Data Structure**](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
 - [**Sorting Algorithms**](https://en.wikipedia.org/wiki/Sorting_algorithm)
-- [**Big O Notation**](https://en.wikipedia.org/wiki/Big_O_notation)
+- [**Simulated Annealing Paper**](https://enac.hal.science/hal-01887543/document)
+- [**Game Tree**](https://en.wikipedia.org/wiki/Game_tree)
 - [**Push Swap Visualizer**](https://github.com/o-reo/push_swap_visualizer.git)
 - [**Push Swap Tester**](https://github.com/louisabricot/push_swap_tester)
