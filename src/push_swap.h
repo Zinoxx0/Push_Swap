@@ -6,7 +6,7 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 10:34:52 by sezequie          #+#    #+#             */
-/*   Updated: 2024/05/29 15:10:32 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/06/09 15:32:01 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "libft/ft_printf/ft_printf.h"
 # include <unistd.h>
 # include <stdlib.h>
+# include "brain/brain.h"
 
 typedef struct s_stack_node
 {

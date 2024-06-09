@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SEGS.c                                             :+:      :+:    :+:   */
+/*   brain.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 14:13:03 by sezequie          #+#    #+#             */
-/*   Updated: 2024/06/09 15:40:10 by sezequie         ###   ########.fr       */
+/*   Created: 2024/06/09 15:30:19 by sezequie          #+#    #+#             */
+/*   Updated: 2024/06/09 15:31:11 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef BRAIN_H
+# define BRAIN_H
 
-//Directed Acyclic Graph Simulated Annealing.
-void	segs(void)
-{
-}
+void	segs(void);
+
+#endif
