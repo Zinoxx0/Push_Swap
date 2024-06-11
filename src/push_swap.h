@@ -6,7 +6,7 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 10:34:52 by sezequie          #+#    #+#             */
-/*   Updated: 2024/06/11 09:51:38 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/06/11 12:17:49 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ typedef struct s_stack_node
 	int					value;
 	int					current_position;
 	int					sorted_id;
-	int					push_price;
-	bool				above_median;
-	bool				cheapest;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }				t_stack_node;
