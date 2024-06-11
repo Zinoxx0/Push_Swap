@@ -6,7 +6,7 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 10:34:52 by sezequie          #+#    #+#             */
-/*   Updated: 2024/06/09 15:32:01 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/06/11 09:51:38 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,5 @@ void			pa(t_stack_node **a, t_stack_node **b, bool checker);
 void			pb(t_stack_node **b, t_stack_node **a, bool checker);
 
 //*** Sorting ***
-void			sort_stacks(t_stack_node **a, t_stack_node **b);
 
 #endif
