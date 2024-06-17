@@ -6,14 +6,20 @@
 /*   By: sezequie <sezequie@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:13:03 by sezequie          #+#    #+#             */
-/*   Updated: 2024/06/11 15:41:16 by sezequie         ###   ########.fr       */
+/*   Updated: 2024/06/17 09:14:12 by sezequie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //Directed Acyclic Graph Simulated Annealing.
-void	simulated_annealing(t_stack_node **a, t_stack_node **b)
+void	sa_innit(t_stack_node **a, t_stack_node **b)
+{
+	t_stack_node *stacks[2] = {*a, *b};
+	simulated_annealing(stacks);
+}
+
+void	simulated_annealing(t_stack_node *stacks[2])
 {
 	float	temperature;
 	float	delta_temp;
@@ -23,7 +29,7 @@ void	simulated_annealing(t_stack_node **a, t_stack_node **b)
 	float	probability;
 	
 	temperature = 1000;
-	entropy_index = get_entropy(*a, *b);
+	entropy_index = get_entropy(stacks[0], stacks[1]);
 	while (entropy_index != 0.0f)
 	{
 		t_stack_node *new_a = generate_neighbor(*a);
